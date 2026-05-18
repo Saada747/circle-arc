@@ -255,3 +255,168 @@
         </a>
     </div>
 </section>
+<!-- ======================================================= -->
+<!-- ARC LAYER 1 FEATURES, ECOSYSTEM FOOTER & FLOATING HUB   -->
+<!-- ======================================================= -->
+
+<!-- Main CSS Animations -->
+<style>
+    .arc-card {
+        background: #1f2937;
+        padding: 30px;
+        border-radius: 12px;
+        border: 1px solid #374151;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .arc-card:hover {
+        transform: translateY(-8px);
+        border-color: #3b82f6;
+        box-shadow: 0 12px 20px -5px rgba(59, 130, 246, 0.3);
+    }
+    .footer-link {
+        color: #9ca3af;
+        text-decoration: none;
+        position: relative;
+        transition: color 0.25s ease;
+        padding-bottom: 2px;
+    }
+    .footer-link:hover {
+        color: #ffffff;
+    }
+    .footer-link::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #3b82f6;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+    .footer-link:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    .floating-support {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        color: white;
+        padding: 14px 24px;
+        border-radius: 50px;
+        box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.5);
+        text-decoration: none;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-weight: bold;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 9999;
+        transition: all 0.3s ease;
+    }
+    .floating-support:hover {
+        transform: scale(1.05) translateY(-3px);
+        box-shadow: 0 15px 30px -5px rgba(59, 130, 246, 0.7);
+    }
+</style>
+
+<!-- Arc L1 Features Section -->
+<section id="arc-l1-features" style="padding: 80px 20px; background-color: #111928; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 2.5rem; color: #3b82f6; margin-bottom: 20px; font-weight: bold;">Gas Revolution with Arc Layer 1</h2>
+        <p style="font-size: 1.1rem; color: #9ca3af; max-width: 800px; margin: 0 auto 50px auto; line-height: 1.8;">
+            Arc is an independent, EVM-compatible Layer 1 blockchain developed by Circle to act as the "financial operating system of the internet." Its core breakthrough is stabilizing transaction economics using the world's most trusted digital dollar.
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: left;">
+            <!-- Feature 1 -->
+            <div class="arc-card">
+                <div style="font-size: 2rem; margin-bottom: 15px;">💵</div>
+                <h3 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 10px;">Native USDC Gas Fees</h3>
+                <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6;">
+                    Eliminate the friction of holding volatile ecosystem tokens like ETH just to pay for transactions. On Arc Layer 1, all gas fees are paid directly and natively in **USDC**.
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="arc-card">
+                <div style="font-size: 2rem; margin-bottom: 15px;">📈</div>
+                <h3 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 10px;">Predictable Cost Models</h3>
+                <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6;">
+                    Built on stablecoin architecture, developers and enterprises can forecast operational overhead in exact fiat metrics, avoiding network spikes and fee volatility.
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="arc-card">
+                <div style="font-size: 2rem; margin-bottom: 15px;">⚡</div>
+                <h3 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 10px;">Advanced Smoothing (EWMA)</h3>
+                <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6;">
+                    Arc adapts the core logic of Ethereum's EIP-1559 base fee algorithm, utilizing an Exponentially Weighted Moving Average to isolate and smooth out brief market congestion spikes.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Official Hub Footer -->
+<footer style="background-color: #0b0f19; color: #ffffff; padding: 60px 20px 30px 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; border-top: 1px solid #1f2937; text-align: left;">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+        
+        <!-- Column 1: Ecosystem Socials -->
+        <div>
+            <h4 style="color: #3b82f6; font-size: 1.1rem; margin-bottom: 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">Community</h4>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="https://x.com" target="_blank" class="footer-link">X / Twitter</a></li>
+                <li style="margin-bottom: 12px;"><a href="https://discord.gg" target="_blank" class="footer-link">Discord</a></li>
+                <li style="margin-bottom: 12px;"><a href="https://youtube.com" target="_blank" class="footer-link">YouTube</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 2: Core Websites -->
+        <div>
+            <h4 style="color: #3b82f6; font-size: 1.1rem; margin-bottom: 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">Websites</h4>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="https://arc.network" target="_blank" class="footer-link">Arc Network</a></li>
+                <li style="margin-bottom: 12px;"><a href="https://circle.com" target="_blank" class="footer-link">Circle Official</a></li>
+                <li style="margin-bottom: 12px;"><a href="https://usdc.com" target="_blank" class="footer-link">USDC Official</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Resources & Tools -->
+        <div>
+            <h4 style="color: #3b82f6; font-size: 1.1rem; margin-bottom: 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">Developers</h4>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="https://circle.com" target="_blank" class="footer-link">Circle Faucet</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Support -->
+        <div>
+            <h4 style="color: #3b82f6; font-size: 1.1rem; margin-bottom: 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">Support</h4>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="https://circle.com" target="_blank" class="footer-link">Help Center</a></li>
+                <li style="margin-bottom: 12px;"><a href="https://circle.coms/submit-ticket" target="_blank" class="footer-link">Submit a Ticket</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Copyright Note -->
+    <div style="max-width: 1200px; margin: 0 auto; border-top: 1px solid #1f2937; padding-top: 20px; text-align: center; color: #4b5563; font-size: 0.85rem;">
+        <p>This is an informational website hub for Arc and Circle ecosystems. All rights reserved to their respective owners.</p>
+    </div>
+</footer>
+
+<!-- Interactive Floating Support Button -->
+<a href="https://circle.coms/submit-ticket" target="_blank" class="floating-support">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+    Support Ticket
+</a>
