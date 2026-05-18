@@ -1,143 +1,191 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>راهنمای جامع دایره و کمان (Circle & Arc)</title>
+    <title>Arc House | The Economic OS for the Internet</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --bg: #f8fafc;
-            --card: #ffffff;
-            --text: #1e293b;
+            --bg-main: #090d16;
+            --bg-sidebar: #0f1626;
+            --bg-card: #141d30;
+            --accent-blue: #00f2fe;
+            --accent-purple: #4facfe;
+            --text-main: #ffffff;
+            --text-muted: #8493a8;
+            --border: rgba(255, 255, 255, 0.05);
         }
         body {
-            font-family: system-ui, -apple-system, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            display: flex;
         }
-        .container {
+        /* Sidebar Layout */
+        .sidebar {
+            width: 260px;
+            background-color: var(--bg-sidebar);
+            height: 100vh;
+            position: fixed;
+            border-right: 1px solid var(--border);
+            padding: 24px;
+            box-sizing: border-box;
+        }
+        .logo-area {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 40px;
+        }
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-links li {
+            padding: 12px 16px;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+        .nav-links li.active, .nav-links li:hover {
+            background-color: rgba(255, 255, 255, 0.03);
+            color: var(--text-main);
+        }
+        /* Main Content Layout */
+        .main-content {
+            margin-left: 260px;
+            padding: 40px 60px;
+            width: calc(100% - 260px);
+            box-sizing: border-box;
+        }
+        .hero {
             max-width: 800px;
-            margin: 0 auto;
+            margin-bottom: 50px;
         }
-        header {
-            text-align: center;
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0 0 16px 0;
+            line-height: 1.2;
+        }
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        /* Dashboard Sections Grid */
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            letter-spacing: 0.5px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
             margin-bottom: 40px;
         }
         .card {
-            background: var(--card);
-            padding: 25px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
+            padding: 24px;
+            transition: transform 0.2s, border-color 0.2s;
         }
-        h2 {
-            color: var(--primary);
-            margin-top: 0;
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(0, 242, 254, 0.3);
         }
-        .formula {
-            background: #eff6ff;
-            padding: 10px;
-            border-right: 4px solid var(--primary);
-            font-family: monospace;
-            direction: ltr;
-            text-align: left;
+        .card-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-blue);
+            font-weight: 700;
+            margin-bottom: 12px;
         }
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+        .card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.15rem;
+            font-weight: 600;
         }
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            box-sizing: border-box;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
         }
-        button {
-            grid-column: span 2;
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        #result {
-            margin-top: 15px;
-            font-weight: bold;
-            color: #059669;
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            .sidebar { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid var(--border); }
+            .main-content { margin-left: 0; width: 100%; padding: 24px; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>اطلاعات و محاسبات دایره و کمان</h1>
-        <p>مفاهیم پایه، فرمول‌ها و ابزار محاسبه آنلاین</p>
-    </header>
-
-    <div class="card">
-        <h2>۱. دایره (Circle) چیست؟</h2>
-        <p>مجموعه نقاطی از صفحه که فاصله‌شان از یک نقطه ثابت (مرکز)، مقدار ثابتی (شعاع) باشد.</p>
-        <p><strong>محیط دایره:</strong> مسافت دور تا دور دایره.</p>
-        <div class="formula">C = 2 * π * r</div>
-        <p><strong>مساحت دایره:</strong> فضای داخل دایره.</p>
-        <div class="formula">A =  π * r²</div>
+    <!-- Sidebar Navigation Section (community.arc.io structure) -->
+    <div class="sidebar">
+        <div class="logo-area">Arc House</div>
+        <ul class="nav-links">
+            <li class="active">Home</li>
+            <li>Arc Discord</li>
+            <li>Arc Docs</li>
+            <li>Discussions</li>
+            <li>Events</li>
+            <li>Ecosystem</li>
+        </ul>
     </div>
 
-    <div class="card">
-        <h2>۲. کمان (Arc) چیست؟</h2>
-        <p>بخشی از محیط یک دایره است که بین دو نقطه قرار دارد. اندازه کمان به شعاع دایره و زاویه مرکزی بستگی دارد.</p>
-        <p><strong>طول کمان (بر حسب درجه):</strong></p>
-        <div class="formula">Arc Length = (θ / 360) * 2 * π * r</div>
-    </div>
-
-    <div class="card">
-        <h2>۳. ماشین حساب آنلاین کمان و دایره</h2>
-        <div class="grid">
-            <div>
-                <label>شعاع دایره (r):</label>
-                <input type="number" id="radius" value="5">
-            </div>
-            <div>
-                <label>زاویه کمان به درجه (θ):</label>
-                <input type="number" id="angle" value="90">
-            </div>
-            <button onclick="calculate()">محاسبه مقادیر</button>
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <div class="hero">
+            <h1>Building the Economic OS for the Internet</h1>
+            <p>Join the global network of Architects reimagining how value moves. Arc is a stablecoin-native Layer-1 blockchain ecosystem engineered by Circle for internet-scale financial activity.</p>
         </div>
-        <div id="result"></div>
+
+        <!-- Ecosystem Core Section -->
+        <div class="section-title">Core Architecture</div>
+        <div class="grid-container">
+            <div class="card">
+                <div class="card-tag">Circle Infrastructure</div>
+                <h3>Powered by Circle</h3>
+                <p>Circle, the issuer of USDC, stewards the core infrastructure of the Arc network, enabling frictionless global stablecoin liquidity integration from day one.</p>
+            </div>
+            <div class="card">
+                <div class="card-tag">L1 Blockchain</div>
+                <h3>The Economic OS</h3>
+                <p>An open, EVM-compatible Layer-1 platform designed specifically for programmable value transfer, fast deterministic execution, and ultra-low fees.</p>
+            </div>
+        </div>
+
+        <!-- Latest Blueprints and Applications Section -->
+        <div class="section-title">Ecosystem Blueprints</div>
+        <div class="grid-container">
+            <div class="card">
+                <div class="card-tag">Agentic Economy</div>
+                <h3>AI-Driven Financial Flows</h3>
+                <p>Arc is optimized to support AI agents executing automated on-chain micro-transactions safely using stablecoin-native infrastructure layers.</p>
+            </div>
+            <div class="card">
+                <div class="card-tag">DeFi Systems</div>
+                <h3>Lending & Borrowing</h3>
+                <p>Unlocking instant capital efficiencies by combining native compliance standards, programmable smart contracts, and sub-second transaction finality.</p>
+            </div>
+        </div>
     </div>
-</div>
-
-<script>
-    function calculate() {
-        const r = parseFloat(document.getElementById('radius').value);
-        const theta = parseFloat(document.getElementById('angle').value);
-        
-        if (isNaN(r) || isNaN(theta) || r <= 0 || theta <= 0) {
-            document.getElementById('result').innerHTML = "لطفاً مقادیر معتبر وارد کنید.";
-            return;
-        }
-
-        const pi = Math.PI;
-        const circumference = 2 * pi * r;
-        const area = pi * Math.pow(r, 2);
-        const arcLength = (theta / 360) * circumference;
-
-        document.getElementById('result').innerHTML = `
-            🔹 محیط دایره: ${circumference.toFixed(2)}<br>
-            🔹 مساحت دایره: ${area.toFixed(2)}<br>
-            🔸 طول کمان: ${arcLength.toFixed(2)}
-        `;
-    }
-</script>
 
 </body>
 </html>
