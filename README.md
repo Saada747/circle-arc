@@ -189,3 +189,69 @@
 
 </body>
 </html>
+<!-- ======================================================= -->
+<!-- ARC LAYER 1 FEATURES & SOCIALS (ADD TO THE BOTTOM)     -->
+<!-- ======================================================= -->
+
+<!-- Arc L1 Features Section -->
+<section id="arc-l1-features" style="padding: 60px 20px; background-color: #111928; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 2.5rem; color: #3b82f6; margin-bottom: 20px; font-weight: bold;">Gas Revolution with Arc Layer 1</h2>
+        <p style="font-size: 1.1rem; color: #9ca3af; max-width: 800px; margin: 0 auto 50px auto; line-height: 1.8;">
+            Arc is an independent, EVM-compatible Layer 1 blockchain developed by Circle to act as the "financial operating system of the internet." Its core breakthrough is stabilizing transaction economics using the world's most trusted digital dollar.
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: left;">
+            <!-- Feature 1 -->
+            <div style="background: #1f2937; padding: 30px; border-radius: 12px; border: 1px solid #374151; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                <div style="font-size: 2rem; margin-bottom: 15px;">💵</div>
+                <h3 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 10px;">Native USDC Gas Fees</h3>
+                <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6;">
+                    Eliminate the friction of holding volatile ecosystem tokens like ETH just to pay for transactions. On Arc Layer 1, all gas fees are paid directly and natively in **USDC**.
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div style="background: #1f2937; padding: 30px; border-radius: 12px; border: 1px solid #374151; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                <div style="font-size: 2rem; margin-bottom: 15px;">📈</div>
+                <h3 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 10px;">Predictable Cost Models</h3>
+                <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6;">
+                    Built on stablecoin architecture, developers and enterprises can forecast operational overhead in exact fiat metrics, avoiding network spikes and fee volatility.
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div style="background: #1f2937; padding: 30px; border-radius: 12px; border: 1px solid #374151; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                <div style="font-size: 2rem; margin-bottom: 15px;">⚡</div>
+                <h3 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 10px;">Advanced Smoothing (EWMA)</h3>
+                <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6;">
+                    Arc adapts the core logic of Ethereum's EIP-1559 base fee algorithm, utilizing an Exponentially Weighted Moving Average to isolate and smooth out brief market congestion spikes.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social Connect Section -->
+<section id="arc-socials" style="padding: 50px 20px; background-color: #0b0f19; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <h3 style="color: #ffffff; font-size: 1.8rem; margin-bottom: 10px;">Join the Architects Community</h3>
+    <p style="color: #6b7280; font-size: 1rem; margin-bottom: 25px;">Stay updated with the official ecosystem channels for Arc and Circle.</p>
+    
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <!-- Twitter (X) Button -->
+        <a href="https://x.com" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background-color: #ffffff; color: #000000; padding: 12px 24px; border-radius: 30px; font-weight: bold; text-decoration: none; transition: transform 0.2s; box-shadow: 0 4px 6px rgba(255,255,255,0.1);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            Follow Arc on X
+        </a>
+
+        <!-- Discord Button -->
+        <a href="https://arc.network" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background-color: #5865F2; color: #ffffff; padding: 12px 24px; border-radius: 30px; font-weight: bold; text-decoration: none; transition: transform 0.2s; box-shadow: 0 4px 6px rgba(88,101,242,0.2);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.094 13.094 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.298 12.298 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.156-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.156 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.156-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.156 2.418z"/>
+            </svg>
+            Join Arc Discord
+        </a>
+    </div>
+</section>
