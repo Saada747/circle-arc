@@ -788,3 +788,197 @@
     // Initial trigger check
     checkReveal();
 </script>
+<!-- ======================================================= -->
+<!--      ARC PRELOADER & GRAPHICAL COMPARISON UPGRADE        -->
+<!-- ======================================================= -->
+
+<!-- Styling for Preloader & Graphic Chart Component -->
+<style>
+    /* 1. Preloader Screen Styles */
+    #arc-preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0b0f19;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 999999;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
+    }
+    .loader-logo {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+    .loader-logo span {
+        color: #3b82f6;
+    }
+    .loader-bar-bg {
+        width: 200px;
+        height: 4px;
+        background-color: #1f2937;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+    }
+    .loader-bar-fill {
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(90deg, #3b82f6, #10b981);
+        border-radius: 10px;
+        animation: loadProgress 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    @keyframes loadProgress {
+        0% { width: 0%; }
+        50% { width: 70%; }
+        100% { width: 100%; }
+    }
+
+    /* 2. Visual Comparison Chart Styles */
+    .chart-box {
+        background: #1f2937;
+        border: 1px solid #374151;
+        border-radius: 16px;
+        padding: 40px;
+        max-width: 800px;
+        margin: 50px auto 0 auto;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        text-align: left;
+    }
+    .chart-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-top: 35px;
+    }
+    .chart-row {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        align-items: center;
+        gap: 15px;
+    }
+    .network-label {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: #e5e7eb;
+    }
+    .bar-container {
+        width: 100%;
+        background-color: #111928;
+        border-radius: 8px;
+        height: 35px;
+        position: relative;
+        overflow: hidden;
+    }
+    .bar-fill {
+        height: 100%;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        font-weight: bold;
+        font-size: 0.85rem;
+        color: #ffffff;
+        box-sizing: border-box;
+        width: 0%;
+        transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .bar-eth {
+        background: linear-gradient(90deg, #ef4444 0%, #b91c1c 100%);
+    }
+    .bar-arc {
+        background: linear-gradient(90deg, #10b981 0%, #047857 100%);
+    }
+    
+    /* Animation trigger via scroll reveal */
+    .reveal-on-scroll.active .bar-eth-trigger { width: 95%; }
+    .reveal-on-scroll.active .bar-arc-trigger { width: 3%; }
+
+    @media (max-width: 600px) {
+        .chart-row {
+            grid-template-columns: 1fr;
+            gap: 5px;
+        }
+        .chart-box {
+            padding: 20px;
+        }
+    }
+</style>
+
+<!-- SECTION 1: ECOSYSTEM PRELOADER SCREEN -->
+<div id="arc-preloader">
+    <div class="loader-logo">Arc<span>Circle</span> Hub</div>
+    <div class="loader-bar-bg">
+        <div class="loader-bar-fill"></div>
+    </div>
+    <p style="color: #4b5563; font-size: 0.85rem; margin-top: 15px; letter-spacing: 0.05em; font-weight: 500;">INITIALIZING SECURE L1 CONNECTION...</p>
+</div>
+
+<!-- SECTION 2: GRAPHICAL COMPARISON COMPONENT (APPENDED INSIDE CALCULATOR AREA) -->
+<script>
+    // Dynamically inject the Comparison Chart into the existing calculator container for layout perfection
+    document.addEventListener("DOMContentLoaded", function() {
+        const targetSection = document.getElementById('gas-calculator');
+        if (targetSection) {
+            const chartHTML = `
+                <div class="chart-box reveal-on-scroll" style="margin-top: 60px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #374151; padding-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                        <h3 style="margin: 0; font-size: 1.3rem; color: #ffffff;">Network Fee Architecture Breakdown</h3>
+                        <span style="background-color: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); color: #3b82f6; font-size: 0.75rem; font-weight: bold; padding: 4px 10px; border-radius: 12px; text-transform: uppercase;">Visual Index</span>
+                    </div>
+                    
+                    <p style="color: #9ca3af; font-size: 0.9rem; margin-top: 15px; line-height: 1.5;">
+                        Traditional networks exponentialize costs based on volatile block congestion. Arc locks baseline parameters directly to stable, ultra-low USDC micro-values.
+                    </p>
+
+                    <div class="chart-wrapper">
+                        <!-- Ethereum Row -->
+                        <div class="chart-row">
+                            <div class="network-label">Legacy EVM L1</div>
+                            <div class="bar-container">
+                                <div class="bar-fill bar-eth bar-eth-trigger">HIGH VOLATILITY ($1.50 - $45.00+)</div>
+                            </div>
+                        </div>
+
+                        <!-- Arc Row -->
+                        <div class="chart-row">
+                            <div class="network-label" style="color: #10b981; font-weight: bold;">Arc Layer 1</div>
+                            <div class="bar-container">
+                                <div class="bar-fill bar-arc bar-arc-trigger">FLAT RATE ($0.01 USDC)</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 25px; font-size: 0.8rem; color: #6b7280; display: flex; justify-content: space-between;">
+                        <span>* Baseline simulations assuming 35 Gwei standard EVM gas spikes.</span>
+                        <span style="color: #10b981; font-weight: 500;">99.1% More Cost-Effective</span>
+                    </div>
+                </div>
+            `;
+            // Insert chart inside the section before the main element finishes
+            targetSection.querySelector('.reveal-on-scroll').insertAdjacentHTML('beforeend', chartHTML);
+        }
+    });
+
+    // Preloader Execution Engine
+    window.addEventListener('load', function() {
+        const preloader = document.getElementById('arc-preloader');
+        // Smoothly fade out the loader view after 2.0s to let animation finish beautifully
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            preloader.style.visibility = 'hidden';
+            
+            // Re-trigger scroll reveal evaluation check once layout settles
+            if (typeof checkReveal === "function") {
+                checkReveal();
+            }
+        }, 2000);
+    });
+</script>
