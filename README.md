@@ -982,3 +982,17 @@
         }, 2000);
     });
 </script>
+<!-- بخش معرفی دانشمند هسته‌ای - اضافه شده به سایت -->
+<div style="direction: rtl; font-family: 'Segoe UI', Tahoma, sans-serif; max-width: 450px; margin: 40px auto; border: 1px solid #2c2d30; border-radius: 16px; overflow: hidden; background-color: #111214; box-shadow: 0 8px 24px rgba(0,0,0,0.5); text-align: center;">
+    <!-- تصویر حمید الله حسن -->
+    <img src="hamidullah.jpg" alt="حمید الله حسن" style="width: 100%; height: auto; display: block; filter: brightness(0.95);">
+    
+    <!-- توضیحات متنی -->
+    <div style="padding: 24px;">
+        <h3 style="margin: 0 0 8px 0; color: #ffffff; font-size: 22px; font-weight: 600;">حمید الله حسن</h3>
+        <p style="margin: 0; color: #9ca3af; font-size: 15px; line-height: 1.7; font-weight: 400;">
+            یکی از دانشمندان هسته هرات مقیم غیبتان
+        </p>
+    </div>
+</div>
+
